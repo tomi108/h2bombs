@@ -30,11 +30,11 @@ const staggerChildren = {
 
 const FloatingBubbles = () => {
   const bubbles = [
-    { size: 120, x: "15%", y: "20%", delay: 0, duration: 25 },
-    { size: 80, x: "75%", y: "30%", delay: 2, duration: 20 },
-    { size: 100, x: "85%", y: "70%", delay: 4, duration: 30 },
-    { size: 60, x: "25%", y: "75%", delay: 1, duration: 22 },
-    { size: 90, x: "50%", y: "15%", delay: 3, duration: 28 },
+    { size: 120, x: "15%", y: "20%", delay: 2, duration: 25 },
+    { size: 80, x: "75%", y: "30%", delay: 4, duration: 20 },
+    { size: 100, x: "85%", y: "70%", delay: 6, duration: 30 },
+    { size: 60, x: "25%", y: "75%", delay: 3, duration: 22 },
+    { size: 90, x: "50%", y: "15%", delay: 5, duration: 28 },
   ];
 
   return (
@@ -52,9 +52,9 @@ const FloatingBubbles = () => {
             filter: "blur(2px)",
           }}
           animate={{
-            y: [0, -30, 0],
-            x: [0, 15, 0],
-            scale: [1, 1.1, 1],
+            y: [0, -10, 0],
+            x: [0, 5, 0],
+            scale: [1, 1.05, 1],
           }}
           transition={{
             duration: bubble.duration,
@@ -94,7 +94,7 @@ const HeroSection = () => {
         variants={staggerChildren}
       >
         <motion.h1 
-          className="text-6xl md:text-8xl font-extrabold tracking-tight mb-6 max-w-5xl mx-auto leading-[1.05]"
+          className="text-7xl md:text-9xl font-extrabold tracking-tight mb-6 max-w-5xl mx-auto leading-[1.05]"
           variants={fadeInUp}
           data-testid="text-hero-headline"
         >
@@ -102,7 +102,7 @@ const HeroSection = () => {
         </motion.h1>
         
         <motion.p 
-          className="text-xl md:text-2xl text-muted-foreground max-w-3xl mx-auto mb-6 leading-relaxed"
+          className="text-xl md:text-2xl text-muted-foreground max-w-3xl mx-auto mb-4 leading-relaxed"
           variants={fadeInUp}
           data-testid="text-hero-subheadline"
         >
@@ -110,11 +110,20 @@ const HeroSection = () => {
         </motion.p>
 
         <motion.div
+          className="mb-6"
+          variants={fadeInUp}
+        >
+          <Badge variant="secondary" className="text-xs px-3 py-1 bg-purple-100 text-purple-700 border-purple-200" data-testid="badge-hero-credentials">
+            EU-Made · Science-Backed
+          </Badge>
+        </motion.div>
+
+        <motion.div
           className="mb-12"
           variants={fadeInUp}
         >
           <p 
-            className="text-3xl md:text-5xl font-bold bg-gradient-to-r from-purple-600 to-purple-400 bg-clip-text text-transparent"
+            className="text-4xl md:text-6xl font-bold bg-gradient-to-r from-purple-600 to-purple-400 bg-clip-text text-transparent"
             data-testid="text-hero-comparison"
           >
             3–10× more H₂ than any competitor
@@ -139,22 +148,22 @@ const HeroSection = () => {
 const ScienceSection = () => {
   const benefits = [
     {
-      icon: Shield,
+      emoji: "🧬",
       title: "Reduces Oxidative Stress",
       description: "Neutralizes harmful free radicals and reduces inflammation at the cellular level"
     },
     {
-      icon: Zap,
+      emoji: "⚡",
       title: "Faster Recovery & Energy",
       description: "Enhances athletic performance and accelerates post-workout muscle recovery"
     },
     {
-      icon: Sparkles,
+      emoji: "✨",
       title: "Skin Hydration & Anti-Aging",
       description: "Deep moisture penetration and visible reduction in fine lines and wrinkles"
     },
     {
-      icon: Heart,
+      emoji: "❤️",
       title: "Selective Antioxidant",
       description: "Targets only harmful radicals while preserving beneficial cellular functions"
     },
@@ -169,7 +178,7 @@ const ScienceSection = () => {
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
         >
-          <h2 className="text-5xl md:text-6xl font-extrabold text-center mb-16" data-testid="text-science-headline">
+          <h2 className="text-6xl md:text-7xl font-extrabold text-center mb-16" data-testid="text-science-headline">
             Why Molecular Hydrogen?
           </h2>
         </motion.div>
@@ -183,8 +192,8 @@ const ScienceSection = () => {
               viewport={{ once: true }}
               transition={{ duration: 0.6, delay: index * 0.1 }}
             >
-              <Card className="p-8 h-full hover-elevate border-purple-200" data-testid={`card-benefit-${index}`}>
-                <benefit.icon className="w-12 h-12 text-purple-600 mb-4" data-testid={`icon-benefit-${index}`} />
+              <Card className="p-8 h-full hover-elevate border-purple-200 hover:border-purple-300 transition-colors" data-testid={`card-benefit-${index}`}>
+                <div className="text-5xl mb-4" data-testid={`icon-benefit-${index}`}>{benefit.emoji}</div>
                 <h3 className="text-xl font-semibold mb-3" data-testid={`text-benefit-title-${index}`}>{benefit.title}</h3>
                 <p className="text-muted-foreground leading-relaxed" data-testid={`text-benefit-description-${index}`}>{benefit.description}</p>
               </Card>
@@ -214,7 +223,7 @@ const ProductSection = () => {
     "Up to 10,000+ ppb H₂",
     "100% natural lavender essential oil",
     "EU GMP manufactured",
-    "12+ months barrier-packaged stability"
+    "Barrier-packaged for 12+ months freshness"
   ];
 
   return (
@@ -227,7 +236,7 @@ const ProductSection = () => {
           transition={{ duration: 0.6 }}
           className="text-center mb-16"
         >
-          <h2 className="text-5xl md:text-6xl font-extrabold mb-8" data-testid="text-product-headline">
+          <h2 className="text-6xl md:text-7xl font-extrabold mb-8" data-testid="text-product-headline">
             Lavender Hydrogen Bath Bomb
           </h2>
         </motion.div>
@@ -243,7 +252,7 @@ const ProductSection = () => {
             <img 
               src={productImage} 
               alt="H2 Bombs Lavender Hydrogen Bath Bomb - 200g Premium Product"
-              className="w-80 h-80 md:w-96 md:h-96 object-contain drop-shadow-2xl"
+              className="w-80 h-80 md:w-96 md:h-96 object-contain drop-shadow-2xl shadow-lg hover:opacity-90 transition-opacity duration-300"
             />
           </div>
         </motion.div>
@@ -288,7 +297,7 @@ const MissionSection = () => {
           transition={{ duration: 0.6 }}
           className="max-w-3xl mx-auto text-center"
         >
-          <h2 className="text-5xl md:text-6xl font-extrabold mb-10" data-testid="text-mission-headline">Our Mission</h2>
+          <h2 className="text-6xl md:text-7xl font-extrabold mb-10" data-testid="text-mission-headline">Our Mission</h2>
           <p className="text-xl md:text-2xl leading-relaxed text-foreground/90" data-testid="text-mission-content">
             We're building the <strong>strongest, cleanest</strong> hydrogen wellness experience in the world. 
             Made in EU. <strong>Science-first.</strong> <strong>No compromises.</strong>
@@ -346,7 +355,7 @@ const WaitlistSection = () => {
           transition={{ duration: 0.6 }}
           className="max-w-xl mx-auto text-center"
         >
-          <h2 className="text-5xl md:text-6xl font-extrabold mb-4" data-testid="text-waitlist-headline">Be the First</h2>
+          <h2 className="text-6xl md:text-7xl font-extrabold mb-4" data-testid="text-waitlist-headline">Be the First</h2>
           <p className="text-muted-foreground mb-8" data-testid="text-waitlist-subheadline">
             Limited early-bird batch • Exclusive launch pricing
           </p>
@@ -421,7 +430,7 @@ const Footer = () => {
               className="text-muted-foreground hover:text-foreground transition-colors"
               data-testid="link-privacy"
             >
-              Privacy
+              Privacy Policy
             </a>
             <span className="text-muted-foreground">•</span>
             <a 
@@ -429,7 +438,7 @@ const Footer = () => {
               className="text-muted-foreground hover:text-foreground transition-colors"
               data-testid="link-terms"
             >
-              Terms
+              Terms of Service
             </a>
           </div>
         </div>
