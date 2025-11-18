@@ -26,14 +26,14 @@
   --popover: 240 10% 95%;
   --popover-foreground: 240 10% 12%;
   --popover-border: 240 10% 92%;
-  --primary: 263 70% 28%;
-  --primary-foreground: 263 70% 98%;
+  --primary: 263 70% 90%;
+  --primary-foreground: 263 70% 20%;
   --secondary: 240 12% 92%;
   --secondary-foreground: 240 12% 15%;
   --muted: 240 8% 94%;
-  --muted-foreground: 240 8% 35%;
-  --accent: 195 85% 92%;
-  --accent-foreground: 195 85% 20%;
+  --muted-foreground: 240 8% 45%;
+  --accent: 195 60% 88%;
+  --accent-foreground: 195 100% 12%;
   --destructive: 0 84% 28%;
   --destructive-foreground: 0 84% 98%;
   --input: 240 20% 85%;
@@ -43,7 +43,7 @@
   --chart-3: 280 65% 35%;
   --chart-4: 210 80% 35%;
   --chart-5: 245 75% 35%;
-  --font-sans: Inter, Satoshi, Open Sans, sans-serif;
+  --font-sans: Inter, -apple-system, BlinkMacSystemFont, sans-serif;
   --font-serif: Georgia, serif;
   --font-mono: Menlo, monospace;
   --radius: .5rem;
