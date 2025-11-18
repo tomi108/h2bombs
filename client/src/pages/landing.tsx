@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { Sparkles, Shield, Zap, Heart, Check } from "lucide-react";
+import { Check } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Card } from "@/components/ui/card";
@@ -30,11 +30,11 @@ const staggerChildren = {
 
 const FloatingBubbles = () => {
   const bubbles = [
-    { size: 120, x: "15%", y: "20%", delay: 2, duration: 25 },
-    { size: 80, x: "75%", y: "30%", delay: 4, duration: 20 },
-    { size: 100, x: "85%", y: "70%", delay: 6, duration: 30 },
+    { size: 120, x: "15%", y: "20%", delay: 3, duration: 25 },
+    { size: 80, x: "75%", y: "30%", delay: 3, duration: 20 },
+    { size: 100, x: "85%", y: "70%", delay: 3, duration: 30 },
     { size: 60, x: "25%", y: "75%", delay: 3, duration: 22 },
-    { size: 90, x: "50%", y: "15%", delay: 5, duration: 28 },
+    { size: 90, x: "50%", y: "15%", delay: 3, duration: 28 },
   ];
 
   return (
@@ -102,7 +102,7 @@ const HeroSection = () => {
         </motion.h1>
         
         <motion.p 
-          className="text-xl md:text-2xl text-muted-foreground max-w-3xl mx-auto mb-4 leading-relaxed"
+          className="text-xl md:text-2xl text-muted-foreground max-w-3xl mx-auto mb-12 leading-relaxed"
           variants={fadeInUp}
           data-testid="text-hero-subheadline"
         >
@@ -113,21 +113,21 @@ const HeroSection = () => {
           className="mb-6"
           variants={fadeInUp}
         >
-          <Badge variant="secondary" className="text-xs px-3 py-1 bg-purple-100 text-purple-700 border-purple-200" data-testid="badge-hero-credentials">
-            EU-Made · Science-Backed
-          </Badge>
-        </motion.div>
-
-        <motion.div
-          className="mb-12"
-          variants={fadeInUp}
-        >
           <p 
             className="text-4xl md:text-6xl font-bold bg-gradient-to-r from-purple-600 to-purple-400 bg-clip-text text-transparent"
             data-testid="text-hero-comparison"
           >
             3–10× more H₂ than any competitor
           </p>
+        </motion.div>
+
+        <motion.div
+          className="mb-12"
+          variants={fadeInUp}
+        >
+          <Badge variant="secondary" className="text-xs px-3 py-1 bg-purple-100 text-purple-700 border-purple-200" data-testid="badge-hero-credentials">
+            EU-Made · Science-Backed · Premium Quality
+          </Badge>
         </motion.div>
         
         <motion.div variants={fadeInUp}>
@@ -158,12 +158,12 @@ const ScienceSection = () => {
       description: "Enhances athletic performance and accelerates post-workout muscle recovery"
     },
     {
-      emoji: "✨",
+      emoji: "🌸",
       title: "Skin Hydration & Anti-Aging",
       description: "Deep moisture penetration and visible reduction in fine lines and wrinkles"
     },
     {
-      emoji: "❤️",
+      emoji: "🛡️",
       title: "Selective Antioxidant",
       description: "Targets only harmful radicals while preserving beneficial cellular functions"
     },
@@ -223,7 +223,7 @@ const ProductSection = () => {
     "Up to 10,000+ ppb H₂",
     "100% natural lavender essential oil",
     "EU GMP manufactured",
-    "Barrier-packaged for 12+ months freshness"
+    "Barrier-packaged for ultimate 12+ months H₂ stability"
   ];
 
   return (
@@ -252,7 +252,7 @@ const ProductSection = () => {
             <img 
               src={productImage} 
               alt="H2 Bombs Lavender Hydrogen Bath Bomb - 200g Premium Product"
-              className="w-80 h-80 md:w-96 md:h-96 object-contain drop-shadow-2xl shadow-lg hover:opacity-90 transition-opacity duration-300"
+              className="w-80 h-80 md:w-96 md:h-96 object-contain drop-shadow-2xl shadow-xl hover:scale-105 transition-transform duration-300"
             />
           </div>
         </motion.div>
