@@ -12,6 +12,7 @@ import { useMutation } from "@tanstack/react-query";
 import { apiRequest } from "@/lib/queryClient";
 import { useToast } from "@/hooks/use-toast";
 import { useState } from "react";
+import productImage from "@assets/generated_images/Premium_lavender_bath_bomb_product_cd804a5f.png";
 
 const fadeInUp = {
   initial: { opacity: 0, y: 20 },
@@ -47,7 +48,7 @@ const FloatingBubbles = () => {
             height: bubble.size,
             left: bubble.x,
             top: bubble.y,
-            background: "radial-gradient(circle, rgba(230, 224, 255, 0.8) 0%, rgba(195, 221, 253, 0.4) 50%, transparent 70%)",
+            background: "radial-gradient(circle, rgba(201, 167, 235, 0.8) 0%, rgba(139, 92, 246, 0.4) 50%, transparent 70%)",
             filter: "blur(2px)",
           }}
           animate={{
@@ -93,26 +94,38 @@ const HeroSection = () => {
         variants={staggerChildren}
       >
         <motion.h1 
-          className="text-5xl md:text-7xl font-bold tracking-tight mb-6 max-w-5xl mx-auto leading-[1.1]"
+          className="text-6xl md:text-8xl font-extrabold tracking-tight mb-6 max-w-5xl mx-auto leading-[1.05]"
           variants={fadeInUp}
           data-testid="text-hero-headline"
         >
-          The Most Powerful Hydrogen Bath Bombs on Earth
+          Up to 10,000+ ppb Hydrogen Bath Bombs
         </motion.h1>
         
         <motion.p 
-          className="text-lg md:text-xl text-muted-foreground max-w-3xl mx-auto mb-12 leading-relaxed"
+          className="text-xl md:text-2xl text-muted-foreground max-w-3xl mx-auto mb-6 leading-relaxed"
           variants={fadeInUp}
           data-testid="text-hero-subheadline"
         >
-          Up to 10,000+ ppb molecular hydrogen • Natural lavender • EU GMP • Coming Q1 2026
+          The strongest molecular hydrogen concentration on Earth • Natural lavender • EU GMP • Coming Q1 2026
         </motion.p>
+
+        <motion.div
+          className="mb-12"
+          variants={fadeInUp}
+        >
+          <p 
+            className="text-3xl md:text-5xl font-bold bg-gradient-to-r from-purple-600 to-purple-400 bg-clip-text text-transparent"
+            data-testid="text-hero-comparison"
+          >
+            3–10× more H₂ than any competitor
+          </p>
+        </motion.div>
         
         <motion.div variants={fadeInUp}>
           <Button 
             size="lg"
             onClick={scrollToWaitlist}
-            className="text-lg px-8 py-6 rounded-full shadow-lg hover:shadow-xl transition-shadow"
+            className="text-lg px-10 py-7 rounded-full shadow-lg hover:shadow-xl transition-shadow bg-gradient-to-r from-purple-600 to-purple-500 hover:from-purple-700 hover:to-purple-600"
             data-testid="button-hero-cta"
           >
             Join Waitlist
@@ -156,7 +169,7 @@ const ScienceSection = () => {
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
         >
-          <h2 className="text-4xl md:text-5xl font-semibold text-center mb-16" data-testid="text-science-headline">
+          <h2 className="text-5xl md:text-6xl font-extrabold text-center mb-16" data-testid="text-science-headline">
             Why Molecular Hydrogen?
           </h2>
         </motion.div>
@@ -170,8 +183,8 @@ const ScienceSection = () => {
               viewport={{ once: true }}
               transition={{ duration: 0.6, delay: index * 0.1 }}
             >
-              <Card className="p-8 h-full hover-elevate" data-testid={`card-benefit-${index}`}>
-                <benefit.icon className="w-12 h-12 text-primary mb-4" data-testid={`icon-benefit-${index}`} />
+              <Card className="p-8 h-full hover-elevate border-purple-200" data-testid={`card-benefit-${index}`}>
+                <benefit.icon className="w-12 h-12 text-purple-600 mb-4" data-testid={`icon-benefit-${index}`} />
                 <h3 className="text-xl font-semibold mb-3" data-testid={`text-benefit-title-${index}`}>{benefit.title}</h3>
                 <p className="text-muted-foreground leading-relaxed" data-testid={`text-benefit-description-${index}`}>{benefit.description}</p>
               </Card>
@@ -186,7 +199,7 @@ const ScienceSection = () => {
           viewport={{ once: true }}
           transition={{ duration: 0.6, delay: 0.4 }}
         >
-          <Badge variant="secondary" className="text-sm px-4 py-2" data-testid="badge-studies">
+          <Badge variant="secondary" className="text-sm px-4 py-2 bg-purple-100 text-purple-700 border-purple-200" data-testid="badge-studies">
             Backed by 2000+ clinical studies
           </Badge>
         </motion.div>
@@ -205,7 +218,7 @@ const ProductSection = () => {
   ];
 
   return (
-    <section className="py-24 md:py-32 bg-gradient-to-b from-background via-accent/20 to-background">
+    <section className="py-24 md:py-32 bg-gradient-to-b from-background via-purple-50/30 to-background">
       <div className="container mx-auto px-6">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -214,7 +227,7 @@ const ProductSection = () => {
           transition={{ duration: 0.6 }}
           className="text-center mb-16"
         >
-          <h2 className="text-4xl md:text-5xl font-semibold mb-8" data-testid="text-product-headline">
+          <h2 className="text-5xl md:text-6xl font-extrabold mb-8" data-testid="text-product-headline">
             Lavender Hydrogen Bath Bomb
           </h2>
         </motion.div>
@@ -226,14 +239,13 @@ const ProductSection = () => {
           transition={{ duration: 0.8 }}
           className="flex justify-center mb-16"
         >
-          <div 
-            className="relative w-64 h-64 md:w-80 md:h-80 rounded-full"
-            style={{
-              background: "radial-gradient(circle, rgba(230, 224, 255, 0.9) 0%, rgba(195, 221, 253, 0.6) 40%, rgba(230, 224, 255, 0.3) 70%, transparent 100%)",
-              boxShadow: "0 0 80px rgba(230, 224, 255, 0.6), 0 0 120px rgba(195, 221, 253, 0.4)",
-            }}
-            data-testid="product-sphere"
-          />
+          <div className="relative" data-testid="product-sphere">
+            <img 
+              src={productImage} 
+              alt="H2 Bombs Lavender Hydrogen Bath Bomb - 200g Premium Product"
+              className="w-80 h-80 md:w-96 md:h-96 object-contain drop-shadow-2xl"
+            />
+          </div>
         </motion.div>
 
         <motion.div
@@ -250,7 +262,7 @@ const ProductSection = () => {
                 className="flex items-start gap-3"
                 data-testid={`feature-${index}`}
               >
-                <Check className="w-6 h-6 text-primary mt-0.5 flex-shrink-0" />
+                <Check className="w-6 h-6 text-purple-600 mt-0.5 flex-shrink-0" />
                 <p className="text-lg">{feature}</p>
               </div>
             ))}
@@ -276,7 +288,7 @@ const MissionSection = () => {
           transition={{ duration: 0.6 }}
           className="max-w-3xl mx-auto text-center"
         >
-          <h2 className="text-4xl md:text-5xl font-semibold mb-10" data-testid="text-mission-headline">Our Mission</h2>
+          <h2 className="text-5xl md:text-6xl font-extrabold mb-10" data-testid="text-mission-headline">Our Mission</h2>
           <p className="text-xl md:text-2xl leading-relaxed text-foreground/90" data-testid="text-mission-content">
             We're building the <strong>strongest, cleanest</strong> hydrogen wellness experience in the world. 
             Made in EU. <strong>Science-first.</strong> <strong>No compromises.</strong>
@@ -325,7 +337,7 @@ const WaitlistSection = () => {
   };
 
   return (
-    <section id="waitlist" className="py-24 md:py-32 bg-gradient-to-b from-background to-accent/30">
+    <section id="waitlist" className="py-24 md:py-32 bg-gradient-to-b from-background to-purple-50/50">
       <div className="container mx-auto px-6">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -334,7 +346,7 @@ const WaitlistSection = () => {
           transition={{ duration: 0.6 }}
           className="max-w-xl mx-auto text-center"
         >
-          <h2 className="text-4xl md:text-5xl font-semibold mb-4" data-testid="text-waitlist-headline">Be the First</h2>
+          <h2 className="text-5xl md:text-6xl font-extrabold mb-4" data-testid="text-waitlist-headline">Be the First</h2>
           <p className="text-muted-foreground mb-8" data-testid="text-waitlist-subheadline">
             Limited early-bird batch • Exclusive launch pricing
           </p>
@@ -343,46 +355,51 @@ const WaitlistSection = () => {
             <motion.div
               initial={{ opacity: 0, scale: 0.9 }}
               animate={{ opacity: 1, scale: 1 }}
-              className="p-8 rounded-lg bg-primary/10 border border-primary/20"
+              className="p-8 rounded-lg bg-purple-100/50 border border-purple-200"
               data-testid="status-success"
             >
-              <Check className="w-12 h-12 text-primary mx-auto mb-4" />
+              <Check className="w-12 h-12 text-purple-600 mx-auto mb-4" />
               <p className="text-lg font-medium" data-testid="text-success-title">Thank you for joining our waitlist!</p>
               <p className="text-muted-foreground mt-2" data-testid="text-success-message">We'll be in touch soon.</p>
             </motion.div>
           ) : (
-            <Form {...form}>
-              <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-4">
-                <FormField
-                  control={form.control}
-                  name="email"
-                  render={({ field }) => (
-                    <FormItem>
-                      <FormControl>
-                        <Input
-                          placeholder="Enter your email"
-                          type="email"
-                          className="h-12 text-base"
-                          disabled={mutation.isPending}
-                          data-testid="input-email"
-                          {...field}
-                        />
-                      </FormControl>
-                      <FormMessage />
-                    </FormItem>
-                  )}
-                />
-                <Button 
-                  type="submit" 
-                  size="lg" 
-                  className="w-full text-lg py-6 rounded-full"
-                  disabled={mutation.isPending}
-                  data-testid="button-submit-waitlist"
-                >
-                  {mutation.isPending ? "Joining..." : "Join Waitlist"}
-                </Button>
-              </form>
-            </Form>
+            <>
+              <Form {...form}>
+                <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-4">
+                  <FormField
+                    control={form.control}
+                    name="email"
+                    render={({ field }) => (
+                      <FormItem>
+                        <FormControl>
+                          <Input
+                            placeholder="Enter your email"
+                            type="email"
+                            className="h-14 text-base border-purple-200 focus:border-purple-400"
+                            disabled={mutation.isPending}
+                            data-testid="input-email"
+                            {...field}
+                          />
+                        </FormControl>
+                        <FormMessage />
+                      </FormItem>
+                    )}
+                  />
+                  <Button 
+                    type="submit" 
+                    size="lg" 
+                    className="w-full text-xl py-8 rounded-full bg-gradient-to-r from-purple-600 to-purple-500 hover:from-purple-700 hover:to-purple-600 shadow-lg hover:shadow-xl transition-all"
+                    disabled={mutation.isPending}
+                    data-testid="button-submit-waitlist"
+                  >
+                    {mutation.isPending ? "Securing Your Spot..." : "Secure My Early-Bird Spot"}
+                  </Button>
+                </form>
+              </Form>
+              <p className="text-sm text-purple-700 font-medium mt-4" data-testid="text-waitlist-discount">
+                Limited first batch • 40% off for waitlist members
+              </p>
+            </>
           )}
         </motion.div>
       </div>
@@ -396,17 +413,9 @@ const Footer = () => {
       <div className="container mx-auto px-6">
         <div className="text-center space-y-6">
           <p className="text-sm text-muted-foreground" data-testid="text-footer-copyright">
-            © 2025 H2 Bombs™ – Made with ♥ in EU
+            © 2025 H2 Bombs™ • Made in EU • hello@h2bombs.com
           </p>
           <div className="flex items-center justify-center gap-6 text-sm">
-            <a 
-              href="mailto:hello@h2bombs.com" 
-              className="text-muted-foreground hover:text-foreground transition-colors"
-              data-testid="link-email"
-            >
-              hello@h2bombs.com
-            </a>
-            <span className="text-muted-foreground">•</span>
             <a 
               href="#" 
               className="text-muted-foreground hover:text-foreground transition-colors"
