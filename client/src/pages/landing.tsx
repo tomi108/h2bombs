@@ -371,8 +371,8 @@ const WaitlistSection = () => {
               data-testid="status-success"
             >
               <Check className="w-12 h-12 text-purple-600 mx-auto mb-4" />
-              <p className="text-lg font-medium" data-testid="text-success-title">Thank you for joining our waitlist!</p>
-              <p className="text-muted-foreground mt-2" data-testid="text-success-message">We'll be in touch soon.</p>
+              <p className="text-lg font-medium" data-testid="text-success-title">Success! You're in for 40% off our 10,000+ ppb H₂ bombs</p>
+              <p className="text-muted-foreground mt-2" data-testid="text-success-message">Check your inbox for exclusive early-bird updates.</p>
             </motion.div>
           ) : (
             <>
