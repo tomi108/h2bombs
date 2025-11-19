@@ -30,11 +30,11 @@ const staggerChildren = {
 
 const FloatingBubbles = () => {
   const bubbles = [
-    { size: 120, x: "15%", y: "20%", delay: 3, duration: 25 },
-    { size: 80, x: "75%", y: "30%", delay: 3, duration: 20 },
-    { size: 100, x: "85%", y: "70%", delay: 3, duration: 30 },
-    { size: 60, x: "25%", y: "75%", delay: 3, duration: 22 },
-    { size: 90, x: "50%", y: "15%", delay: 3, duration: 28 },
+    { size: 120, startX: "-10%", y: "20%", delay: 0, duration: 18 },
+    { size: 80, startX: "-15%", y: "35%", delay: 4, duration: 22 },
+    { size: 100, startX: "-12%", y: "65%", delay: 8, duration: 20 },
+    { size: 60, startX: "-8%", y: "50%", delay: 12, duration: 16 },
+    { size: 90, startX: "-10%", y: "15%", delay: 6, duration: 19 },
   ];
 
   return (
@@ -46,21 +46,21 @@ const FloatingBubbles = () => {
           style={{
             width: bubble.size,
             height: bubble.size,
-            left: bubble.x,
+            left: bubble.startX,
             top: bubble.y,
             background: "radial-gradient(circle, rgba(201, 167, 235, 0.8) 0%, rgba(139, 92, 246, 0.4) 50%, transparent 70%)",
             filter: "blur(2px)",
           }}
           animate={{
-            y: [0, -10, 0],
-            x: [0, 5, 0],
-            scale: [1, 1.05, 1],
+            x: ["0vw", "110vw"],
+            y: [0, -15, 0, 15, 0],
+            scale: [1, 1.05, 1, 1.03, 1],
           }}
           transition={{
             duration: bubble.duration,
             delay: bubble.delay,
             repeat: Infinity,
-            ease: "easeInOut",
+            ease: "linear",
           }}
         />
       ))}
