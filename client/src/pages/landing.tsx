@@ -113,11 +113,12 @@ const HeroSection = () => {
         </motion.p>
 
         <motion.div
-          className="mb-6"
+          className="mb-6 pb-2"
           variants={fadeInUp}
         >
           <p 
-            className="text-4xl md:text-6xl font-bold bg-gradient-to-r from-purple-600 to-purple-400 bg-clip-text text-transparent"
+            className="text-4xl md:text-6xl font-bold bg-gradient-to-r from-purple-600 to-purple-400 bg-clip-text text-transparent leading-tight"
+            style={{ lineHeight: "1.3" }}
             data-testid="text-hero-comparison"
           >
             3–10× more H₂ than any competitor
