@@ -6,8 +6,9 @@ export default defineConfig({
   plugins: [react()],
   resolve: {
     alias: {
-      '@': path.resolve(__dirname, 'src'),
-      '@shared': path.resolve(__dirname, '../shared')
+      '@': path.resolve(__dirname, 'src'), // your source code
+      '@shared': path.resolve(__dirname, '../shared'), // shared folder
+      '@assets': path.resolve(__dirname, '../attached_assets') // points to attached_assets folder
     }
   },
   base: '/'
