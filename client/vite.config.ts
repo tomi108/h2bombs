@@ -1,13 +1,15 @@
 import { defineConfig } from 'vite'
-import react from '@vitejs/plugin-react'
-import path from 'path'
+  import react from '@vitejs/plugin-react'
+  import path from 'path'
 
-export default defineConfig({
-  plugins: [react()],
-  base: '/', // pre Vercel
-  resolve: {
-    alias: {
-      '@': path.resolve(__dirname, 'src'), // <-- this maps "@" to your src folder
+  export default defineConfig({
+    plugins: [react()],
+    resolve: {
+      alias: {
+        '@shared': path.resolve(__dirname, 'src/shared'),
+        '@components': path.resolve(__dirname, 'src/components'),
+        // add other aliases as needed
+      },
     },
-  },
-})
+    base: '/',
+  })
