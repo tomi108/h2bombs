@@ -243,6 +243,9 @@ const ProductSection = () => {
           <h2 className="text-6xl md:text-7xl font-extrabold mb-8" data-testid="text-product-headline">
             Lavender Hydrogen Bath Bomb
           </h2>
+          <p className="text-lg md:text-xl text-muted-foreground tracking-wide" data-testid="text-product-subheadline">
+            Launch Edition — First of Many
+          </p>
         </motion.div>
 
         <motion.div
