@@ -101,7 +101,7 @@ const HeroSection = () => {
           variants={fadeInUp}
           data-testid="text-hero-headline"
         >
-          Up to 10,000+ ppb Hydrogen Bath Bombs
+          800+ ppb Molecular Hydrogen Bath Bombs
         </motion.h1>
         
         <motion.p 
@@ -109,7 +109,7 @@ const HeroSection = () => {
           variants={fadeInUp}
           data-testid="text-hero-subheadline"
         >
-          The strongest molecular hydrogen concentration on Earth • Organic ingredients • EU GMP • Coming Q1 2026
+          Lab-verified 800+ ppb H₂ generation • 100% natural & organic • EU GMP • Launching Q1 2026
         </motion.p>
 
         <motion.div
@@ -121,7 +121,7 @@ const HeroSection = () => {
             style={{ lineHeight: "1.3" }}
             data-testid="text-hero-comparison"
           >
-            3–10× more H₂ than any competitor
+            Highest lab-verified H₂ output in the category
           </p>
         </motion.div>
 
@@ -224,7 +224,7 @@ const ScienceSection = () => {
 const ProductSection = () => {
   const features = [
     "200 g premium bath bomb",
-    "Up to 10,000+ ppb H₂",
+    "≥ 800 ppb molecular hydrogen (lab-verified)",
     "100% natural lavender essential oil",
     "EU GMP manufactured",
     "Barrier-packaged for ultimate 12+ months H₂ stability"
@@ -375,7 +375,7 @@ const WaitlistSection = () => {
               data-testid="status-success"
             >
               <Check className="w-12 h-12 text-purple-600 mx-auto mb-4" />
-              <p className="text-lg font-medium" data-testid="text-success-title">Success! You're in for 40% off our 10,000+ ppb H₂ bombs</p>
+              <p className="text-lg font-medium" data-testid="text-success-title">Success! You're in for 40% off our 800+ ppb H₂ bombs</p>
               <p className="text-muted-foreground mt-2" data-testid="text-success-message">Check your inbox for exclusive early-bird updates.</p>
             </motion.div>
           ) : (
@@ -428,6 +428,9 @@ const Footer = () => {
     <footer className="py-16 md:py-20 border-t">
       <div className="container mx-auto px-6">
         <div className="text-center space-y-6">
+          <p className="text-xs text-muted-foreground/70 max-w-3xl mx-auto mb-8 leading-relaxed" style={{ fontSize: '0.8rem', color: '#888', margin: '30px auto 10px' }}>
+            Hydrogen claims based on sealed laboratory test (1 L water, 40 °C, Trustlex ENH-2000): ≥ 0.8 ppm at 10 min. Real open-bath levels vary (typically 250–450 ppb with recommended method) and are not guaranteed. Cosmetic product for relaxation and skin hydration only.
+          </p>
           <p className="text-sm text-muted-foreground" data-testid="text-footer-copyright">
             © 2025 H2 Bombs™ • Made in EU • hello@h2bombs.com
           </p>
