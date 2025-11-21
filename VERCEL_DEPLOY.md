@@ -11,22 +11,32 @@ git push origin main
 
 ### 2. Deploy to Vercel
 
-#### Option A: Vercel Dashboard (Recommended)
+#### ✅ Option A: GitHub Integration (Recommended)
 1. Go to [vercel.com](https://vercel.com)
 2. Click **"Add New Project"**
 3. Import your GitHub repository
-4. **Framework Preset:** Vite
-5. **Root Directory:** Leave as `.` (root)
-6. **Build Command:** `npm run build` (auto-detected)
-7. **Output Directory:** `dist/public` (already in vercel.json)
-8. **Install Command:** Leave default or use `npm install`
+4. Vercel will auto-detect the Vite project and configure:
+   - **Framework Preset:** Vite
+   - **Root Directory:** `.` (root)
+   - **Build Command:** `npm run build` (from package.json)
+   - **Output Directory:** `dist/public` (from vercel.json)
+   - **Install Command:** `npm install` (runs automatically)
 
-#### Option B: Vercel CLI
+**Why GitHub Integration:**
+- ✅ Automatic `npm install` before every build
+- ✅ Auto-deploys on every push to main branch
+- ✅ Preview deployments for pull requests
+- ✅ Zero configuration needed
+
+#### ⚠️ Option B: Vercel CLI (Not Recommended)
 ```bash
-npm i -g vercel
-vercel login
-vercel
+# If you must use CLI, run install first:
+npm install
+npm run build
+vercel deploy --prod
 ```
+
+**Note:** The CLI does not run `npm install` automatically, so dependencies must be installed manually before deploying. Use GitHub integration instead for automatic dependency management.
 
 ### 3. Add Environment Variables
 
