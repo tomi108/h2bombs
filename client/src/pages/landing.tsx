@@ -109,7 +109,7 @@ const HeroSection = () => {
           variants={fadeInUp}
           data-testid="text-hero-subheadline"
         >
-          The strongest molecular hydrogen concentration on Earth • Natural lavender • EU GMP • Coming Q1 2026
+          The strongest molecular hydrogen concentration on Earth • Organic ingredients • EU GMP • Coming Q1 2026
         </motion.p>
 
         <motion.div
